@@ -1,3 +1,7 @@
+function addNumbers(num1, num2) {
+   return num1 + num2;
+}
+
 function loadGuessNumber() {
    //Generate a number between 1 and 10
    let randomNumber = Math.floor(Math.random() * 10) + 1;
@@ -7,6 +11,8 @@ function loadGuessNumber() {
    // initializing the undefined guess variable
    let guess;
    
+   let sum = addNumbers(3, 2);
+   console.log('Sum at loadGuessNumner', sum);
    while (guess !== randomNumber) {
 
       //Prompting a user for a number
@@ -32,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
    console.log("Hello from my About Me page!");
 
    //LOADS GUESS NUMBER GAME.
-   loadGuessNumber();
+   //loadGuessNumber();
 
    let calButton = document.getElementById('calculate');
 
@@ -44,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
          let num1 = Number(inputNum1.value);
 
          let num2 = Number(document.getElementById('num2').value);
-         let sum = num1 + num2;
+         let sum = addNumbers(num1, num2);
 
          let results = document.getElementById('result')
          console.log("results", results);
