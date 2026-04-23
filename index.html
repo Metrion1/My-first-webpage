@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>About me</title>
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap');
     </style>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
 </head>
+
 <body>
-    
+
     <header>
         <nav>
             <ul>
@@ -22,20 +24,28 @@
     <main>
         <section>
             <h1>About Me</h1>
-            <p>Hello! My name is Rohalio Newman. I am a student at Bates Technical college in the Software Dev track. 
-I have been on the, Self-taught, IT track for 3 years now. During this time, I have been working on transforming myself 
-into an entrepreneur. The main goal is to get my Invention onto the market and be able to build something generational 
-from that. To get to that point I need to fund my Prototype and business. I have tried multiple avenues such as applying 
-for grants and loans, starting a clothing business and becoming an author. I have unfortunately realized that all these 
-avenues require a hefty amount of investment on my end. I have looked at various jobs that will allow me to pay my bills 
-and fund my dreams at the same time. During my search I landed onto the IT track. So, we have come full circle, this is 
-my launch point, to become a software developer, make enough money to fund my dreams and then leave my mark on society no 
-matter how small. </p>
+            <p>Hello! My name is Rohalio Newman. I am a student at Bates Technical college in the Software Dev track.
+                I have been on the, Self-taught, IT track for 3 years now. During this time, I have been working on
+                transforming myself
+                into an entrepreneur. The main goal is to get my Invention onto the market and be able to build
+                something generational
+                from that. To get to that point I need to fund my Prototype and business. I have tried multiple avenues
+                such as applying
+                for grants and loans, starting a clothing business and becoming an author. I have unfortunately realized
+                that all these
+                avenues require a hefty amount of investment on my end. I have looked at various jobs that will allow me
+                to pay my bills
+                and fund my dreams at the same time. During my search I landed onto the IT track. So, we have come full
+                circle, this is
+                my launch point, to become a software developer, make enough money to fund my dreams and then leave my
+                mark on society no
+                matter how small. </p>
         </section>
         <section>
             <h2>INTERESTS</h2>
-            <p>If you have read through the previous paragraph, you are aware of my interests. If you are looking for some 
-more clarity this section is for you. My interests are as follows:</p>
+            <p>If you have read through the previous paragraph, you are aware of my interests. If you are looking for
+                some
+                more clarity this section is for you. My interests are as follows:</p>
             <ul>
                 <li>Entrepreneurship</li>
                 <li>Inventing</li>
@@ -45,24 +55,41 @@ more clarity this section is for you. My interests are as follows:</p>
         </section>
         <section>
             <h2>WHY IM TORTURING MYSELF!</h2>
-            <p>As to why I am learning Web development and software development. The long and short of it is that I enjoy it;
-                 and I feel as though this career path is possibly the most lucrative and has the most potential for upward 
-                 growth. I enjoy creating being able to see my work come to life and other people enjoy or get use out of my 
-                 creatioins. The earning potential will allow me to pay the bills and break down a lot of financial barriers 
-                 that are keeping me out of entrepreneurship. I also feel as though this skill set will serve me well in the 
-                 beginning phases of my journey. It will allow me to build my own websites and make complimenting applications. </p>
+            <p>As to why I am learning Web development and software development. The long and short of it is that I
+                enjoy it;
+                and I feel as though this career path is possibly the most lucrative and has the most potential for
+                upward
+                growth. I enjoy creating being able to see my work come to life and other people enjoy or get use out of
+                my
+                creatioins. The earning potential will allow me to pay the bills and break down a lot of financial
+                barriers
+                that are keeping me out of entrepreneurship. I also feel as though this skill set will serve me well in
+                the
+                beginning phases of my journey. It will allow me to build my own websites and make complimenting
+                applications. </p>
         </section>
-         Direct link to my <a href="project.html#projects-list">Projects</a>
+        Direct link to my <a href="project.html#projects-list">Projects</a>
         <section>
             <h3>Calculator</h3>
-            <input id="num1" type="number" placeholder="Enter the first number"> 
+            <input id="num1" type="number" placeholder="Enter the first number">
             <input id="num2" type="number" placeholder="Enter the second number">
-            <button id="calculate"> Calculate sum</button>>
-            <p id="result"></p>
+            <button id="calculate"> Calculate sum</button>
+            <h2>Tip Calculator</h2>
+            <form id="tip-form">
+                <button type="submit">Calculate Tip</button>
+                <lable for="billAmount">Bill Amount:</lable>
+                <input type="number" id="billAmount" name="billAmount" required />
+
+                <lable for="TipPercentage">Tip Percentage:</lable>
+                <input type="number" id="TipPercentage" name="TipPercentage" required />
+            </form>
+            <h3>Total Amount</h3>
+            <p id="results"></p>
         </section>
     </main>
     <footer>
         <p>My contact information</p>
     </footer>
 </body>
+
 </html>
