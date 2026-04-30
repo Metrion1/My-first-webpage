@@ -2,11 +2,18 @@
 <html>
 
 <head>
-    <title>About me</title>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap');
     </style>
     <link rel="stylesheet" href="../styles.css" />
+    <style>
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
     <script src="script.js" defer></script>
 </head>
 
@@ -23,7 +30,10 @@
         </nav>
     </header>
     <main>
-        <hi>Todo List</hi>
+        <h1>Todo List</h1>
+        <input type="text" id="todo-item" placeholder="Add a new todo item." />
+        <button id="add-btn">Add</button>
+        <div id="todo-container"></div>
     </main>
     <footer>
         <p>My contact information</p>
