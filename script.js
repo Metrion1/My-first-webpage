@@ -49,6 +49,16 @@ const calculateTip = (billAmount, tipPercentage) => {
 document.addEventListener('DOMContentLoaded', function () {
    console.log("Hello from my About Me page!");
 
+   //display nav in mobile view
+   const burger = document.querySelector(".burger");
+
+   if(burger) {
+      burger.addEventListener("click", function () {
+         const nav = document.querySelector("nav");
+         nav.classList.toggle("open");
+      });
+   }
+
    //LOADS GUESS NUMBER GAME.
    //loadGuessNumber();
    let results = document.getElementById('results')
