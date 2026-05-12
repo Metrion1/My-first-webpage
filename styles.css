@@ -51,6 +51,11 @@ nav ul li a {
   font-weight: bold;
 }
 
+nav ul li a:hover {
+  background-color: white;
+  color: black;
+}
+
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -146,6 +151,11 @@ h3 {
                 background-color: yellow;
             }
 
+            nav.open ul {
+              flex-direction: row;
+              flex-wrap: wrap;
+              }
+
             .container section {
                 width: 47%;
                 padding: 1rem;
@@ -157,6 +167,12 @@ h3 {
             body {
                 background-color: blue;
             }
+
+            nav.open ul {
+              flex-direction: row;
+              flex-wrap: wrap;
+              justify-content: end;
+              }
 
             .container section {
                 width: 48%;
@@ -175,6 +191,17 @@ h3 {
                 background-color: green;
             }
 
+            .burger {
+                display: none;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: row;
+                gap: 1.5rem;
+                justify-content: center;
+            }
+
             .container section {
                 width: 30%;
                 padding: 1rem;
@@ -189,6 +216,18 @@ h3 {
         @media (min-width: 1281px) {
             body {
                 background-color: red;
+            }
+
+            .burger {
+                display: none;
+            }
+
+
+            nav ul {
+                display: flex;
+                flex-direction: row;
+                gap: 1.5rem;
+                justify-content: left;
             }
 
             .container section {
