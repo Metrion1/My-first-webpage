@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact me</title>
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap');
-</style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Cormorant+Unicase:wght@300;400;500;600;700&display=swap');
+    </style>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
 </head>
+
 <body>
-    
+
     <header>
         <button class="burger">
             <span></span>
@@ -28,31 +30,49 @@
         </nav>
     </header>
     <main>
-       <p>Reach out and TOUCH ME!</p>
+        <p>Reach out and TOUCH ME!</p>
         <p>All fields marked with the * are required.</p>
-       <form id="contact-form" novalidate>
-        <div class="form-group">
-            <label for="Name">Name*:</label>
-            <input type="text" id="Name" value="" placeholder="Enter your full name" required>
-            <span class="field-error" id="name-error"></span>
-        </div>
+        <form id="contact-form" novalidate>
+            <div class="form-group">
+                <label for="Name">Name*:</label>
+                <input type="text" id="Name" value="" placeholder="Enter your full name" required>
+                <span class="field-error" id="name-error"></span>
+            </div>
 
-        <div class="form-group">
-            <label for="Email">Email*:</label>
-            <input type="email" id="Email" value="" placeholder="Enter your email" required>
-            <span class="field-error" id="email-error"></span>
-        </div>
+            <div class="form-group">
+                <label for="Email">Email*:</label>
+                <input type="email" id="Email" value="" placeholder="Enter your email" required>
+                <span class="field-error" id="email-error"></span>
+            </div>
 
-        <div class="form-group">
-            <label for="Message">Message*:</label>
-            <textarea id="Message" value="" rows="5" placeholder="Enter your message" maxlength="250" required></textarea>
-            <span class="field-error" id="message-error"></span>
-        </div>
-        <button type="submit">Send Message</button>
-       </form>
+            <div class="form-group">
+                <label for="Message">Message*:</label>
+                <textarea id="Message" value="" rows="5" placeholder="Enter your message" maxlength="250"
+                    required></textarea>
+                <span class="field-error" id="message-error"></span>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
     </main>
-    <footer>
-        <p>My contact information</p>
+    <footer class="site-footer">
+        <section class="footer-section">
+            <h4>About</h4>
+            <p>A short Bio about me.</p>
+        </section>
+        <section class="footer-section">
+            <h4>Quick links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </section>
+        <section class="footer-section">
+            <h4>Contact Information</h4>
+            <p>Email: <a href="mailto:example@example.com">example@example.com</a></p>
+            <p>Phone: <a href="tel:+11234567890">(123) 456-7890</a></p>
+        </section>
     </footer>
 </body>
+
 </html>

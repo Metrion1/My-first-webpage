@@ -7,6 +7,25 @@ body {
   font-size: 1rem;
 }
 
+/*************************Text Styles*****************************/
+h1,h2,h3,h4,h5,h6{
+  font-family: "Cormorant Unicase", serif;
+  font-style: normal;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+   font-weight: 600;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+
 header {
   background-color: grey;
   padding: 1rem 1.5rem;
@@ -73,29 +92,44 @@ main {
   box-sizing: border-box;
 }
 
+/*******************Footer Styles*****************************/
+.site-footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+}
+
+.footer-section h4 {
+  font-weight : 900;
+}
+
+.footer-section li {
+  list-style: none;
+  margin-bottom: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: white;
+  text-decoration: underline;
+}
 /*******************Mobile Styles*****************************/
 #project-section-4, #project-section-5 {
   display: none;
 }
 
 
-/*************************Text Styles*****************************/
-h1,h2,h3,h4,h5,h6{
-  font-family: "Cormorant Unicase", serif;
-  font-style: normal;
-}
-
-h1 {
-  font-weight: 700;
-}
-
-h2 {
-   font-weight: 600;
-}
-
-h3 {
-  font-weight: 500;
-}
 
 /*************************Link Styles*****************************/
 /*************************Image Styles*****************************/
@@ -183,6 +217,17 @@ h3 {
             #project-section-4 {
                 display: block;
             }
+
+            .site-footer {
+                flex-direction: row;
+                flex-wrap: wrap;
+                /*justify-content: space-between;*/
+              
+            }
+
+            .footer-section {
+              width: calc(50% - 1rem);
+            }
         }
 
         /* Media Query for Laptops and Desktops */
@@ -209,6 +254,15 @@ h3 {
 
             #project-section-4, #project-section-5 {
                 display: block;
+            }
+
+            .site-footer {
+                flex-direction: row;
+                /*justify-content: space-evenly;*/
+            }
+
+            .footer-section {
+              flex: 1;
             }
         }
 
@@ -237,5 +291,13 @@ h3 {
 
             #project-section-4, #project-section-5 {
                 display: block;
+            }
+
+            .site-footer {
+                flex-direction: row;
+                /*justify-content: space-evenly;*/
+            }
+            .footer-section {
+              flex: 1;
             }
         }
