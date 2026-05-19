@@ -115,6 +115,12 @@ if (contactForm) {
             try {
                //open the user's default email client with the pre-filled email
                window.location.href = mailtoLink;
+
+               //clear the form fields after attempting to open the email client
+               name.value = "";
+               email.value = "";
+               message.value = "";
+
             } catch (error) {
                   console.error("Error opening email client:", error);
                   alert("An error occurred while trying to open your email client. Please try again.");
