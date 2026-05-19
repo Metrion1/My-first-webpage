@@ -46,6 +46,20 @@ const calculateTip = (billAmount, tipPercentage) => {
    return (billAmount + (billAmount * (tipPercentage / 100))).toFixed(2);
 };
 
+const checkRequired = element => element?.required && element?.value.trim() !== "";
+
+const showError = (errorElementId, message) => {
+   const errorElement = document.getElementById(errorElementId);
+   if (errorElement) {
+      errorElement.textContent = message;
+   }
+};
+
+
+/*function checkRequired(element) {
+   return element.required && element.value.trim() !== "";
+}*/
+
 document.addEventListener('DOMContentLoaded', function () {
 //for contact form click event//
 const contactForm = document.getElementById("contact-form");
@@ -56,22 +70,60 @@ if (contactForm) {
       const email = document.getElementById("Email");
       const message = document.getElementById("Message");
 
-      if ((name.required && name.value.trim() !== "") &&
-       (email.required && email.value.trim() !== "") &&
-        (message.required && message.value.trim() !== "")) {
 
-         console.log("Name:", name.value);
-         console.log("Email:", email.value);
-         console.log("Message:", message.value);
-      }
-      else {
-         alert("Please fill in all required fields.");
-      }
-      //console.log("Form submitted!", event);
-      //************ /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ ********//regex for email validation
-   });
+      const namevalue = name.value.trim();
+      const emailvalue = email.value.trim();
+
+      let isValid = true;
+
+         if (!checkRequired(name)) {
+            showError("name-error", "Name is required.");
+            isValid = false;
+         }
+
+         if (!checkRequired(message)) {
+            showError("message-error", "Message is required.");
+            isValid = false;
+         }
+
+         if (!checkRequired(email)) {
+            showError("email-error", "Email is required.");
+            isValid = false;
+         } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.value)) {
+            showError("email-error", "Please enter a valid email address.");
+            isValid = false;
+         }
+         if (isValid) {
+            //clear error messages
+            showError("name-error", "");
+            showError("email-error", "");
+            showError("message-error", "");
+
+            const subject = encodeURIComponent(`Contact Form Submission from ${namevalue}`);
+
+            const bodyLines = [
+               `Name: ${namevalue}`,
+               `Email: ${emailvalue}`,
+               "",
+               `Message: ${message.value.trim()}`
+            ];
+
+            const body = encodeURIComponent(bodyLines.join("\r\n"));
+            const recipientEmail = "your@email.com"; // Replace with your email address
+            const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+
+            try {
+               //open the user's default email client with the pre-filled email
+               window.location.href = mailtoLink;
+            } catch (error) {
+                  console.error("Error opening email client:", error);
+                  alert("An error occurred while trying to open your email client. Please try again.");
+               }
+   }
+});
 }
-
+//console.log("Form submitted!", event);
+   //************ /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ ********//regex for email validation
 
 
    console.log("Hello from my About Me page!");
