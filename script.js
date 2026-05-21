@@ -61,20 +61,35 @@ const showError = (errorElementId, message) => {
 }*/
 
 document.addEventListener('DOMContentLoaded', function () {
-//for contact form click event//
-const contactForm = document.getElementById("contact-form");
-if (contactForm) {
-   contactForm.addEventListener("submit", function (event) {
-      event.preventDefault();//prevents the webpage from reloading when the form is submitted.
-      const name = document.getElementById("Name");
-      const email = document.getElementById("Email");
-      const message = document.getElementById("Message");
+
+   const banner = document.getElementById("contact-banner");
+
+   //greet the user with a message
+   let returningUser = localStorage.getItem("returningUser");
+   if (returningUser) {
+      banner.textContent = "Welcome back! Thank you for visiting my website again.";
+   }
+   else {
+      localStorage.setItem("returningUser", "true");
+   }
+
+   //for contact form click event//
+   const contactForm = document.getElementById("contact-form");
+   if (contactForm) {
+      contactForm.addEventListener("submit", function (event) {
+         event.preventDefault();//prevents the webpage from reloading when the form is submitted.
 
 
-      const namevalue = name.value.trim();
-      const emailvalue = email.value.trim();
 
-      let isValid = true;
+         const name = document.getElementById("Name");
+         const email = document.getElementById("Email");
+         const message = document.getElementById("Message");
+
+
+         const namevalue = name.value.trim();
+         const emailvalue = email.value.trim();
+
+         let isValid = true;
 
          if (!checkRequired(name)) {
             showError("name-error", "Name is required.");
@@ -122,13 +137,13 @@ if (contactForm) {
                message.value = "";
 
             } catch (error) {
-                  console.error("Error opening email client:", error);
-                  alert("An error occurred while trying to open your email client. Please try again.");
-               }
+               console.error("Error opening email client:", error);
+               alert("An error occurred while trying to open your email client. Please try again.");
+            }
+         }
+      });
    }
-});
-}
-//console.log("Form submitted!", event);
+   //console.log("Form submitted!", event);
    //************ /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ ********//regex for email validation
 
 
@@ -137,7 +152,7 @@ if (contactForm) {
    //display nav in mobile view
    const burger = document.querySelector(".burger");
 
-   if(burger) {
+   if (burger) {
       burger.addEventListener("click", function () {
          const nav = document.querySelector("nav");
          nav.classList.toggle("open");
