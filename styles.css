@@ -176,6 +176,37 @@ main {
   transition: background-color 0.5s ease;
 }
 
+.btn-submit:hover {
+  background-color: blue;
+}
+
+#contact-form p {
+  font-size: .75rem;
+}
+
+.base-banner {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.welcome-banner {
+  background-color: white;
+  color: black;
+}
+
+.form-error {
+  background-color: white;
+  color: red;
+}
+
+.form-succcess {
+  background-color: green;
+  color: white;
+}
+
 /*************************Link Styles*****************************/
 /*************************Image Styles*****************************/
 /*************************Utility Classes*****************************/
@@ -231,8 +262,8 @@ main {
 /* Media Query for low resolution  Tablets, Ipads */
         @media (min-width: 481px) and (max-width: 767px) {
             body {
-                background-color: yellow;
-            }
+            /*    background-color: yellow;
+            }*/
 
             nav.open ul {
               flex-direction: row;
@@ -248,8 +279,8 @@ main {
         /* Media Query for Tablets Ipads portrait mode */
         @media (min-width: 768px) and (max-width: 1024px) {
             body {
-                background-color: blue;
-            }
+            /*    background-color: blue;
+            }*/
 
             nav.open ul {
               flex-direction: row;
@@ -282,8 +313,8 @@ main {
         /* Media Query for Laptops and Desktops */
         @media (min-width: 1025px) and (max-width: 1280px) {
             body {
-                background-color: green;
-            }
+            /*    background-color: green;
+            }*/
 
             .burger {
                 display: none;
@@ -318,8 +349,8 @@ main {
         /* Media Query for Large screens */
         @media (min-width: 1281px) {
             body {
-                background-color: #ff9999;
-            }
+              /*  background-color: #ff9999;
+            }*/
 
             .burger {
                 display: none;
@@ -349,4 +380,4 @@ main {
             .footer-section {
               flex: 1;
             }
-        }
+        }}}}}

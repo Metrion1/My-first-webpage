@@ -63,16 +63,19 @@ const showError = (errorElementId, message) => {
 document.addEventListener('DOMContentLoaded', function () {
 
    const banner = document.getElementById("contact-banner");
+   if (banner) {
 
-   //greet the user with a message
-   let returningUser = localStorage.getItem("returningUser");
-   if (returningUser) {
-      banner.textContent = "Welcome back! Thank you for visiting my website again.";
+      //greet the user with a message
+      let returningUser = localStorage.getItem("returningUser");
+      if (returningUser) {
+         banner.textContent = "Welcome back! Thank you for visiting my website again.";
+         banner.classList.add("welcome-banner");
+         banner.classList.add("base-banner");
+      }
+      else {
+         localStorage.setItem("returningUser", "true");
+      }
    }
-   else {
-      localStorage.setItem("returningUser", "true");
-   }
-
    //for contact form click event//
    const contactForm = document.getElementById("contact-form");
    if (contactForm) {
@@ -136,9 +139,16 @@ document.addEventListener('DOMContentLoaded', function () {
                email.value = "";
                message.value = "";
 
+               //display a success message to the user
+               banner.textContent = "Please check your email client to send the message.";
+               banner.classList.add("base-banner");
+               banner.classList.add("form-succcess");
+
             } catch (error) {
-               console.error("Error opening email client:", error);
-               alert("An error occurred while trying to open your email client. Please try again.");
+               //display an error message if the email client could not be opened
+               banner.textContent = `Error opening email client: ${error.message}`;
+               banner.classList.add("base-banner");
+               banner.classList.add("form-error");
             }
          }
       });
